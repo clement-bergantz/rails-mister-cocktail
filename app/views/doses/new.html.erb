@@ -1,6 +1,6 @@
 <h1>Add ingredients to your cocktail</h1>
-<%= simple_form_for[cocktail, dose] do |f| %>
-	<%= f.input :idescription %>
-	<%= f.association :ingredient_id %>
-	<%= f.buttion :submit %>
+<%= simple_form_for [cocktail, dose] do |f| %>
+	<%= f.input :description %>
+	<%= f.association :ingredient, label_method: :to_s %>
+	<%= f.button :submit %>
 <% end %>
