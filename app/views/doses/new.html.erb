@@ -1,6 +1,9 @@
-<h1>Add ingredients to your cocktail</h1>
-<%= simple_form_for [cocktail, dose] do |f| %>
-	<%= f.input :description %>
-	<%= f.association :ingredient, label_method: :to_s %>
-	<%= f.button :submit %>
-<% end %>
+<div class="container">
+	<h1>Add ingredients to your cocktail</h1>
+	<%= simple_form_for [@cocktail, @dose] do |f| %>
+		<%= f.input :description %>
+		<%= f.input :ingredient_id, collection: Ingredient.all %>
+		<%= f.submit "add an ingredient", class: "btn btn-primary" %>
+	<% end %>
+	<%= link_to "Back", @cocktail, class: "btn btn btn-primary" %>
+</div>

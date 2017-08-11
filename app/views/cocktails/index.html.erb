@@ -1,9 +1,9 @@
-<h1>Cocktails</h1>
-<% @cocktails.each do |cocktail| %>
-	<p><%= cocktail.name %></p>
-	<%= link_to 'View details', cocktail_path(cocktail), class: "btn btn-primary"%>
-<% end %>
-<%= link_to 'Add a new cocktail', new_cocktail_path %>
-
-
-
+<div class="container">
+	<h1>Cocktails</h1>
+	<% @cocktails.each do |cocktail| %>
+		<p><%= cocktail.name %></p>
+		<%= link_to 'View details', cocktail_path(cocktail), class: "btn btn-primary" %>
+		<%= link_to 'Delete', 'cocktails#destroy', class: "btn btn btn-primary" %>
+	<% end %>
+	<%= link_to 'Add a new cocktail', new_cocktail_path, class: "btn btn btn-primary" %>
+</div>

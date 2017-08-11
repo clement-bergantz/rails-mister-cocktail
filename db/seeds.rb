@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+Ingredient.destroy_all
+ingredients = %w(lemon ice mint leaves redbull jagermeister sugar tonic gin rhum)
+ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
